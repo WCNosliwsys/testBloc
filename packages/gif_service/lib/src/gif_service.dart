@@ -8,8 +8,8 @@ import 'package:http/http.dart' as http;
 class GifService {
   /// {@macro gif_service}
 
-  GifService();
-  final http.Client _httpClient = http.Client();
+  GifService({http.Client? httpClient}): _httpClient = httpClient?? http.Client();
+  final http.Client _httpClient;
   final String baseUrl = "api.giphy.com";
   final String endPoint = "/v1/gifs/trending";
   final String apiKey = '16JI47HdOqG8RQ3C6o9FyosbEhEkCH7h';
